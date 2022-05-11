@@ -5,9 +5,9 @@ class GamesController < ApplicationController
     # - word : le mot qu'il faut deviner,
               # - une première méthode devra surement faire un ".split" pour remplacer la lettre une foi celle ci devinée.
               # - une deuxième méthode devra afficher le nombre de lettres et les remplacer par un '_' dans la show.
+    # - life : le nombre de vie du joueur, départ à 5 vie, perd une vie a chaque fois que user_choice == nil
     # - user_choice : le dernier choix du user
     # - choices : doit comptabiliser les choix prècédents (un array des lettres choisies)
-    # - bad_choices : doit comptabiliser le nombre fois ou choices est == nil
     # - image : la première image.
               # - if bad_choices == 0 alors afficher la premiere image,
               # - if bad_choices == 1 alors afficher la deuxieme image,
@@ -40,8 +40,12 @@ class GamesController < ApplicationController
       @image = images.first
       @user_choice = user_choice
       @choices << user_choice
-      @bad_choices = user_choice.nil
     end
+
+       # TO DO : télécharger les images sur cloudinary et connecter à cloudinary
+  def images
+    ["1/5","2/5","3/5","4/5","5/5","6/5"]
+  end
 
 
   def partie

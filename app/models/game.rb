@@ -1,8 +1,14 @@
 class Game < ApplicationRecord
 
+    # Les variables nécessaires au lancement d'une partie :
+    # - letters : les lettres de l'alphabet
+    # - word : le mot qu'il faut deviner, doit afficher le nombre de lettres et les remplacer par un '_'
+    # - image : la première image
+    # - wrong : doit compter le nombre de fois ou le resultat est 'NIL'
   def initialize
     @letters = ("a".."z").to_a
     @word = words.sample
+    @image = images.first
   end
 
   def words
@@ -25,9 +31,9 @@ class Game < ApplicationRecord
       "understanding", "supplementary", "preoccupation"
     ]
   end
-
-  def begin_game
-    puts "New game started"
+    # TO DO : télécharger les images sur cloudinary et connecter à cloudinary
+  def images
+    ["1/5","2/5","3/5","4/5","5/5","6/5"]
   end
 
 end

@@ -1,5 +1,8 @@
 class GamesController < ApplicationController
 
+  has_many :guesses
+
+  validates :user_choice, presence: true
     # Les variables nécessaires au lancement d'une partie :
     # - letters : les lettres de l'alphabet
     # - word : le mot qu'il faut deviner,
@@ -12,7 +15,6 @@ class GamesController < ApplicationController
               # - if bad_choices == 0 alors afficher la premiere image,
               # - if bad_choices == 1 alors afficher la deuxieme image,
               # - ETC ...
-
 
 
 end

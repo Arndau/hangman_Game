@@ -5,7 +5,7 @@ class GamesController < ApplicationController
     # - word : le mot qu'il faut deviner,
               # - une première méthode devra surement faire un ".split" pour remplacer la lettre une foi celle ci devinée.
               # - une deuxième méthode devra afficher le nombre de lettres et les remplacer par un '_' dans la show.
-    # - life : le nombre de vie du joueur, départ à 5 vie, perd une vie a chaque fois que user_choice == nil
+    # - life : le nombre de vie du joueur, départ à 5 vie, perd une vie a chaqt stue fois que user_choice == nil
     # - user_choice : le dernier choix du user
     # - choices : doit comptabiliser les choix prècédents (un array des lettres choisies)
     # - image : la première image.

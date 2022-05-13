@@ -29,6 +29,10 @@ class GamesController < ApplicationController
     @game = Game.last
   end
 
+  def word_to_guess
+    @word_to_guess = words.shuffle
+
+  end
   private
 
   def politic_params

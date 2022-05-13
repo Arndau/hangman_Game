@@ -27,3 +27,5 @@ words =[
        ]
 
 images = ["1/5","2/5","3/5","4/5","5/5","6/5"]
+
+game = Game.create!(word_to_guess: words, health_bar: 5, game_status: "Game not started yet")

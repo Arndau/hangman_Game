@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-
+  skip_before_action :authenticate_user!
 
     # Les variables nécessaires au lancement d'une partie :
     # - letters : les lettres de l'alphabet
@@ -14,5 +14,25 @@ class GamesController < ApplicationController
               # - if bad_choices == 1 alors afficher la deuxieme image,
               # - ETC ...
 
+  def index
+    @games = Game.all
+  end
+
+  def new
+    Game.destroy_all
+    @game = Game.new
+  end
+
+  def show
+    Game.destroy_all
+    @game = Game.new
+    @game = Game.last
+  end
+
+  private
+
+  def politic_params
+    params.require(:game).permit(:word_to_guess, :health_bar, :game_status)
+  end
 
 end

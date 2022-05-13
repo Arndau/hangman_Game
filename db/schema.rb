@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_05_12_152845) do
     t.integer "health_bar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "guesse_id", null: false
+    t.bigint "guesse_id"
     t.string "game_status"
     t.index ["guesse_id"], name: "index_games_on_guesse_id"
   end

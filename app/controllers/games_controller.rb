@@ -1,8 +1,6 @@
 class GamesController < ApplicationController
 
-  has_many :guesses
 
-  validates :user_choice, presence: true
     # Les variables nécessaires au lancement d'une partie :
     # - letters : les lettres de l'alphabet
     # - word : le mot qu'il faut deviner,

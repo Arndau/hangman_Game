@@ -1,5 +1,6 @@
 class Game < ApplicationRecord
 
-  belongs_to :games
+  has_many :guesses
   validates :game_status, inclusion: {in: ["Game not started yet", "In Game", "You win", "You loose"] }
+  validates :user_choice, presence: true
 end

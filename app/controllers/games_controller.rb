@@ -24,7 +24,6 @@ class GamesController < ApplicationController
   end
 
   def show
-    Game.destroy_all
     @game = Game.new
     @game = Game.last
   end
